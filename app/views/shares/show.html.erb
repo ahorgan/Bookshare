@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>From user:</strong>
+  <%= @share.from_user_id %>
+</p>
+
+<p>
+  <strong>To user:</strong>
+  <%= @share.to_user_id %>
+</p>
+
+<p>
+  <strong>Book:</strong>
+  <%= @share.book %>
+</p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @share.message %>
+</p>
+
+<%= link_to 'Edit', edit_share_path(@share) %> |
+<%= link_to 'Back', shares_path %>

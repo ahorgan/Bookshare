@@ -1,0 +1,43 @@
+// Place all the styles related to the Books controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+html{}
+
+.row .col-sm-1 {
+	width: 110px;
+	height: 250px;
+	border-bottom: 15px solid;
+	margin-top: 30px;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
+.row .col-sm-1 .book {
+	border-top-style: outset;
+	border-right-style: outset;
+	max-width: 100px;
+    max-height: 225px;
+    width: 100%;
+    height: 100%;
+	background: #380000;
+	text-align: center;
+	bottom: 0px;
+	align-items: stretch;
+	position: relative;
+}
+
+.row .col-sm-1 .book .author {
+    float: none;
+    display: inline-block;
+}
+
+.row .col-sm-1 .book .title {
+    transform: rotate(90deg);
+    text-align: center;
+    margin-top: 30px;
+}
+
+.row .col-sm-1 .book .links {
+	position: absolute;
+    bottom: 0;
+    self-align: center;
+}

@@ -1,0 +1,62 @@
+<%= stylesheet_link_tag "books" %>
+<div class="col-sm-2 sidenav hidden-xs">
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><%= link_to 'Public', books_path %></li>
+        <% if user_signed_in? %>
+          <li><%= link_to 'Book Shares', shares_path %></li>
+        <% end %>
+      </ul><br>
+    </div>
+    <div class="col-sm-9">
+      <div class="row">
+        <% @books.each do |book| %>
+            <div class="col-sm-1">
+              <div class="book">
+                <div class="author">
+                  <%= book.author %>
+                </div>
+                <div class="title">
+                  <%= book.title %>
+                </div>
+                <div class="links">
+                  <%= link_to 'Open', book %>
+                  <br>
+                  <%= link_to 'Edit', edit_book_path(book) %>
+                  <br>
+                  <%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %>
+                </div>
+              </div>
+            </div>
+        <% end %>
+        </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Filename</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @books.each do |book| %>
+            <tr>
+              <td><%= book.title %></td>
+              <td><%= book.author %></td>
+              <td><%= book.filename %></td>
+              <td><%= link_to 'Show', book %></td>
+              <td><%= link_to 'Edit', edit_book_path(book) %></td>
+              <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <br>
+
+      <%= link_to 'New Book', new_book_path %>
+</div>

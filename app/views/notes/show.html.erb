@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <%= @note.created_at %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @note.user.codename %>
+</p>
+
+<p>
+  <strong>Book:</strong>
+  <%= @note.book.title %>
+</p>
+
+<p>
+  <strong>Topic:</strong>
+  <%= @note.topic %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @note.content %>
+</p>
+
+<%= render 'reply_form' %>
+
+<p>
+  <%if @note.child_notes.length > 0 %>
+    <strong>Replies:</strong>
+    <% @note.child_notes.each do |reply| %>
+      <%= reply.created_at %>
+      <%= reply.user.codename %>
+      <%= reply.content %>
+    <% end %>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_note_path(@note) %> |
+<%= link_to 'Reply', note_new_reply(@note) %>
